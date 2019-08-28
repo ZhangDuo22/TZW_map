@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_rubbish_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="垃圾分类"
+        android:textColor="#000"
+        android:textSize="40dp"/>
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv_rubbish_view"/>
+    <TextView
+        android:id="@+id/tv_rubbish_information0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_image"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_rubbish_view"/>
+    <TextView
+        android:id="@+id/tv_rubbish_information1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_image"
+        android:layout_below="@id/tv_rubbish_information0"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/tv_rubbish_information2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/iv_image"
+        android:layout_below="@id/tv_rubbish_information1"
+        android:layout_marginTop="10dp"/>
+    
+</RelativeLayout>

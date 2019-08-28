@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Login Page"
+        android:textColor="#4822DD"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/et_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_login"
+        android:layout_marginTop="70dp"
+        android:drawableLeft="@mipmap/user"
+        android:hint="@string/Username"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:drawablePadding="10dp"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/et_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_1"
+        android:layout_marginTop="30dp"
+        android:drawableLeft="@mipmap/password"
+        android:hint="@string/Password"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:drawablePadding="10dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_2"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@id/btn_pre_register"
+        android:background="@drawable/btn_login"
+        android:text="@string/Login"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_pre_register"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_2"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_login"
+        android:text="@string/Register"
+        android:textAllCaps="false" />
+
+</RelativeLayout>

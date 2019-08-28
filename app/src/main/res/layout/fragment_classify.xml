@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    android:clickable="true"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:paddingLeft="2dp"
+            android:paddingTop="2dp"
+            android:text="@string/garbage"
+            android:textColor="#808080"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_1"
+            android:paddingTop="35dp"
+            android:text="垃圾分类指南"
+            android:textColor="#000"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_2"
+            android:text="往哪丢？搜一搜" />
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="220dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/tv_1"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@id/tv_2"
+            android:background="@drawable/classify" />
+
+        <RelativeLayout
+            android:id="@+id/relative_1"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_below="@+id/iv_1"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_search">
+
+            <EditText
+                android:id="@+id/edt_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请输入垃圾名称"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:paddingLeft="5dp"/>
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_search" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relative_2"
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_classify_uuuu"
+            android:layout_below="@id/relative_1"
+            android:layout_marginTop="50dp">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/recycle_classify"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/return_classify"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="可回收物"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recyclable"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="10dp"/>
+            <Button
+                android:id="@+id/btn_classify_recyclable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_community_pressed" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relative_3"
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_classify_uuuu"
+            android:layout_below="@id/relative_1"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/harnful_classify"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/return_classify"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有害垃圾"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hazardous"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="18dp"/>
+            <Button
+                android:id="@+id/btn_classify_hazardous"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_community_pressed" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_4"
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_classify_uuuu"
+            android:layout_below="@id/relative_2"
+            android:layout_marginTop="20dp">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/wet_classify"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/return_classify"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="湿垃圾"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Household"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="25dp"/>
+            <Button
+                android:id="@+id/btn_classify_household"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_community_pressed" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_5"
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:background="@drawable/bg_classify_uuuu"
+            android:layout_below="@id/relative_3"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentRight="true">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/dry_classify"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/return_classify"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="干垃圾"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Residual"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:paddingLeft="18dp"/>
+            <Button
+                android:id="@+id/btn_classify_residual"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_community_pressed" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_voice"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_5"
+            android:text="按下 说话"
+            android:textColor="#fff"
+            android:background="@drawable/bg_classify_voice"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"/>
+    </RelativeLayout>
+</FrameLayout>
