@@ -22,6 +22,8 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import com.rabbit.tzw.R;
 import com.rabbit.tzw.myself.mySocketHelper;
+import com.rabbit.tzw.remind.PhotoActivity;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
@@ -158,7 +160,9 @@ public class RemindFragment extends Fragment implements View.OnClickListener {
                         mSocketHelper.sendDataString(jsonObject);
                         String sRv = mSocketHelper.getDataString();
                         Log.i("张夺来巡山了",sRv);
-                        mTv12.setText(sRv);
+                        Intent intent = new Intent(getActivity(), PhotoActivity.class);
+                        startActivity(intent);
+//                        mTv12.setText(sRv);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
