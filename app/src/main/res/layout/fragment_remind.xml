@@ -88,11 +88,13 @@
                 android:layout_marginLeft="5dp"/>
 
         </RelativeLayout>
+
         <ImageView
             android:id="@+id/picture"
-            android:layout_width="wrap_content"
-            android:layout_height="350dp"
-            android:layout_below="@+id/remind_relative_3"/>
+            android:layout_width="305dp"
+            android:layout_height="402dp"
+            android:layout_below="@+id/remind_relative_3"
+            android:layout_centerHorizontal="true" />
         <Button
             android:id="@+id/remind_photo0"
             android:layout_width="45dp"
@@ -100,5 +102,12 @@
             android:background="@drawable/remind_photo"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/tv_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这里"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
 </FrameLayout>
