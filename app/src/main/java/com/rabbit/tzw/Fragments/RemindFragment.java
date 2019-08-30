@@ -3,7 +3,6 @@ package com.rabbit.tzw.Fragments;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,13 +24,14 @@ import com.rabbit.tzw.R;
 import com.rabbit.tzw.myself.mySocketHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import static android.app.Activity.RESULT_OK;
+import static com.rabbit.tzw.myself.myRemind.rotateBitmap;
+import static com.rabbit.tzw.myself.myRemind.compressImage;
 
 public class RemindFragment extends Fragment implements View.OnClickListener {
     //线程池和……
@@ -119,31 +119,7 @@ public class RemindFragment extends Fragment implements View.OnClickListener {
         mTv12 = getActivity().findViewById(R.id.tv_12);
         takePhoto.setOnClickListener(this);
     }
-    //压缩图片方法
 
-
-    private Bitmap compressImage(Bitmap image, int size) {
-
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        // 质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
-        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        int options = 110;
-        // 循环判断如果压缩后图片是否大于100kb,大于继续压缩
-        while (baos.toByteArray().length / 1024 > size) {
-            // 重置baos即清空baos
-            baos.reset();
-            // 每次都减少10
-            options -= 10;
-            // 这里压缩options%，把压缩后的数据存放到baos中
-            image.compress(Bitmap.CompressFormat.JPEG, options, baos);
-
-        }
-        // 把压缩后的数据baos存放到ByteArrayInputStream中
-        ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());
-        // 把ByteArrayInputStream数据生成图片
-        Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);
-        return bitmap;
-    }
     public class MyThread extends Thread{
         @Override
         public void run() {
@@ -197,19 +173,5 @@ public class RemindFragment extends Fragment implements View.OnClickListener {
     }
     private String getimage(){
         return img;
-    }
-     //旋转图片
-     public static Bitmap rotateBitmap(Bitmap bitmap) {
-         int width = bitmap.getWidth();
-         int height = bitmap.getHeight();
-
-         if(width < height) {
-             bitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getWidth());
-         }else {
-             Matrix matrix = new Matrix();
-             matrix.postRotate(90);
-             bitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getHeight(),bitmap.getHeight(),matrix,true);
-         }
-         return bitmap;
     }
 }
