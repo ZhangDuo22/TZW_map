@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -15,12 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import com.rabbit.tzw.R;
+import com.rabbit.tzw.myself.TTSUtility;
 import com.rabbit.tzw.myself.mySocketHelper;
 import com.rabbit.tzw.remind.PhotoActivity;
 
@@ -30,21 +29,16 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.concurrent.ExecutorService;
+
 import static android.app.Activity.RESULT_OK;
 import static com.rabbit.tzw.myself.myRemind.rotateBitmap;
 import static com.rabbit.tzw.myself.myRemind.compressImage;
 
 public class RemindFragment extends Fragment implements View.OnClickListener {
-    //线程池和……
-    private Handler mMainHandler;
-    private ExecutorService mThreadPool;
-
     public static final int TAKE_PHOTO = 1;
     private ImageView picture;
     private Uri imageUri;
     private String img;
-    private TextView mTv12;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -118,7 +112,6 @@ public class RemindFragment extends Fragment implements View.OnClickListener {
     private void initData(){
         Button takePhoto = getActivity().findViewById(R.id.remind_photo0);
         picture = getActivity().findViewById(R.id.picture);
-        mTv12 = getActivity().findViewById(R.id.tv_12);
         takePhoto.setOnClickListener(this);
     }
 
@@ -161,8 +154,8 @@ public class RemindFragment extends Fragment implements View.OnClickListener {
                         String sRv = mSocketHelper.getDataString();
                         Log.i("张夺来巡山了",sRv);
                         Intent intent = new Intent(getActivity(), PhotoActivity.class);
+                        intent.putExtra("Photo",sRv);
                         startActivity(intent);
-//                        mTv12.setText(sRv);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

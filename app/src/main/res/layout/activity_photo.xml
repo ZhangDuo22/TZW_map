@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".remind.PhotoActivity">
+    android:background="#fff">
+    <TextView
+        android:id="@+id/tv_photo_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="垃圾分类"
+        android:textColor="#4D4D4D"
+        android:textSize="30dp" />
+    <ImageView
+        android:id="@+id/iv_photo_image"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/tv_photo_view"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_photo_information0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_photo_view"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="19dp"
+        android:layout_toRightOf="@id/iv_photo_image" />
+
+    <TextView
+        android:id="@+id/tv_photo_information1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_photo_information0"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/iv_photo_image" />
+
+    <TextView
+        android:id="@+id/tv_photo_information2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_photo_information1"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/iv_photo_image" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/tree" />
+
+</RelativeLayout>

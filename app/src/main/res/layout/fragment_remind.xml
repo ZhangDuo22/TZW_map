@@ -102,12 +102,5 @@
             android:background="@drawable/remind_photo"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"/>
-        <TextView
-            android:id="@+id/tv_12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="这里"
-            android:layout_marginLeft="5dp"
-            android:layout_alignParentRight="true"/>
     </RelativeLayout>
 </FrameLayout>

@@ -8,6 +8,7 @@ import android.os.Message;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.rabbit.tzw.R;
+import com.rabbit.tzw.myself.TTSUtility;
 import com.rabbit.tzw.myself.mySocketHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -117,54 +118,65 @@ public class RubbishListViewActivity extends AppCompatActivity {
           public void handleMessage(Message msg){
               switch (msg.what){
                   case 0:
+                      TTSUtility.getInstance(getApplicationContext()).speaking("你什么也没有输入，搜索个球");
                       infor0.setText("小提示");
                       infor1.setText("你什么也没有输入,搜索个球");
                       photo.setImageResource(R.drawable.help_rubbish);break;
                   case 1:
+                      TTSUtility.getInstance(getApplicationContext()).speaking("无法连接服务器");
                       infor0.setText("小提示");
                       infor1.setText("无法连接服务器");
                       photo.setImageResource(R.drawable.help_rubbish);break;
                   case 2:
+                      TTSUtility.getInstance(getApplicationContext()).speaking("系统预测为可回收垃圾");
                       infor0.setText("小提示");
                       infor1.setText("您输入的是一个泛类");
                       infor2.setText("系统预测为可回收垃圾");
                       photo.setImageResource(R.drawable.recycyle_rubbish);break;
                   case 3:
+                      TTSUtility.getInstance(getApplicationContext()).speaking("系统预测为有害垃圾");
                       infor0.setText("小提示");
                       infor1.setText("您输入的是一个泛类");
                       infor2.setText("系统预测为有害垃圾");
                       photo.setImageResource(R.drawable.harm_rubbish);break;
                   case 4:
+                      TTSUtility.getInstance(getApplicationContext()).speaking("系统预测为湿垃圾");
                       infor0.setText("小提示");
                       infor1.setText("您输入的是一个泛类");
                       infor2.setText("系统预测为湿垃圾");
                       photo.setImageResource(R.drawable.wet_rubbish);break;
                   case 5:
+                      TTSUtility.getInstance(getApplicationContext()).speaking("系统预测为干垃圾");
                       infor0.setText("小提示");
                       infor1.setText("您输入的是一个泛类");
                       infor2.setText("系统预测为干垃圾");
                       photo.setImageResource(R.drawable.dry_rubbish);break;
                   case 6:
-                      infor0.setText("投放小提示");
+                      TTSUtility.getInstance(getApplicationContext()).speaking("可回收垃圾");
+                      infor0.setText("可回收垃圾");
                       infor1.setText(getInfor1());
                       infor2.setText(getInfor2());
                       photo.setImageResource(R.drawable.recycyle_rubbish);break;
                   case 7:
-                      infor0.setText("投放小提示");
+                      TTSUtility.getInstance(getApplicationContext()).speaking("有害垃圾");
+                      infor0.setText("有害垃圾");
                       infor1.setText(getInfor1());
                       infor2.setText(getInfor2());
                       photo.setImageResource(R.drawable.harm_rubbish);break;
                   case 8:
-                      infor0.setText("投放小提示");
+                      TTSUtility.getInstance(getApplicationContext()).speaking("湿垃圾");
+                      infor0.setText("湿垃圾");
                       infor1.setText(getInfor1());
                       infor2.setText(getInfor2());
                       photo.setImageResource(R.drawable.wet_rubbish);break;
                   case 9:
-                      infor0.setText("投放小提示");
+                      TTSUtility.getInstance(getApplicationContext()).speaking("干垃圾");
+                      infor0.setText("干垃圾");
                       infor1.setText(getInfor1());
                       infor2.setText(getInfor2());
                       photo.setImageResource(R.drawable.dry_rubbish);break;
                   case 10:
+                      TTSUtility.getInstance(getApplicationContext()).speaking("不是寻常物品，请在试一下下");
                       infor0.setText("小提示");
                       infor1.setText("输入的内容不是寻常物品");
                       infor2.setText("请重新输入");
@@ -173,7 +185,7 @@ public class RubbishListViewActivity extends AppCompatActivity {
           }
         };
     }
-    public void setinformation(String word){
+    private void setinformation(String word){
         for (int i = 0; i<word.length(); i++){
             if (word.charAt(i) == '；'||word.charAt(i) == '。'){
                 number = i;
@@ -185,10 +197,10 @@ public class RubbishListViewActivity extends AppCompatActivity {
             }
         }
     }
-    public String getInfor1(){
+    private String getInfor1(){
         return infordata1;
     }
-    public String getInfor2(){
+    private String getInfor2(){
         return infordata2;
     }
 }
