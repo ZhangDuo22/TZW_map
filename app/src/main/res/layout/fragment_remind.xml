@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/remind_location"
                 android:layout_toRightOf="@+id/tv_6"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="9dp"/>
             <TextView
                 android:id="@+id/tv_7"
                 android:layout_width="wrap_content"

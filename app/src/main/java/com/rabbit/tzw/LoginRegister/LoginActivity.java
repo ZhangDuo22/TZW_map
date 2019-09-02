@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rabbit.tzw.Fragments.FunctionActivity;
@@ -33,7 +34,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Handler mMainHandler;
     private ExecutorService mThreadPool;
     //输入窗和登录注册
-    private Button mPreRegister,mLogin;
+    private Button mLogin;
+    private TextView mPreRegister;
     private EditText mEdtId,mEdtPassword;
     //客服端和自定义
     private mySocketHelper mSocketHelper;

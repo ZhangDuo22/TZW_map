@@ -2,70 +2,77 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    android:padding="10dp"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/tv_login"
+    android:background="#fff">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Login Page"
-        android:textColor="#4822DD"
-        android:textSize="40sp"
-        android:layout_marginTop="20dp"/>
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg" />
+        <TextView
+            android:id="@+id/login_tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ribbit"
+            android:layout_marginTop="150dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"/>
 
-    <EditText
-        android:id="@+id/et_1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/tv_login"
-        android:layout_marginTop="70dp"
-        android:drawableLeft="@mipmap/user"
-        android:hint="@string/Username"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="#fff"
-        android:textSize="16sp"
-        android:drawablePadding="10dp"
-        android:maxLines="1"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/login_tv_1"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/conner" />
 
-    <EditText
-        android:id="@+id/et_2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/et_1"
-        android:layout_marginTop="30dp"
-        android:drawableLeft="@mipmap/password"
-        android:hint="@string/Password"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="#fff"
-        android:textSize="16sp"
-        android:drawablePadding="10dp"
-        android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/et_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="200dp"
+            android:hint="请输入用户名"
+            android:layout_below="@id/login_tv_1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLines="1"
+            android:background="@drawable/btn_login"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"/>
+        <EditText
+            android:id="@+id/et_2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="280dp"
+            android:layout_below="@id/login_tv_1"
+            android:hint="请输入密码"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLines="1"
+            android:background="@drawable/btn_login"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"/>
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_2"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@id/btn_pre_register"
-        android:background="@drawable/btn_login"
-        android:text="@string/Login"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_2"
+            android:layout_alignParentRight="true"
+            android:text="登录"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp" />
+        <TextView
+            android:id="@+id/btn_pre_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_2"
+            android:text="新用户注册"
+            android:textColor="#0033FF"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"/>
 
-    <Button
-        android:id="@+id/btn_pre_register"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/et_2"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/btn_login"
-        android:text="@string/Register"
-        android:textAllCaps="false" />
+    </RelativeLayout>
 
 </RelativeLayout>

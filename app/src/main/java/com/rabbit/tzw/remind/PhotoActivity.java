@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.rabbit.tzw.R;
 import com.rabbit.tzw.myself.TTSUtility;
 
@@ -31,7 +30,6 @@ public class PhotoActivity extends AppCompatActivity {
         setinformation(information.substring(1));
         manageViewID();
         handleMessage(delect0);
-        TTSUtility.getInstance(this).speaking(information.substring(1));
     }
     public void handleMessage(char msg){
         switch (msg){
@@ -39,22 +37,39 @@ public class PhotoActivity extends AppCompatActivity {
                 infor0.setText("可回收垃圾");
                 infor1.setText(getInfor1());
                 infor2.setText(getInfor2());
+                TTSUtility.getInstance(this).speaking(getInfor1() + '，' + getInfor2());
                 photo.setImageResource(R.drawable.recycyle_rubbish);break;
             case '1':
                 infor0.setText("有害垃圾");
                 infor1.setText(getInfor1());
                 infor2.setText(getInfor2());
+                TTSUtility.getInstance(this).speaking(getInfor1() + '，' + getInfor2());
                 photo.setImageResource(R.drawable.harm_rubbish);break;
             case '2':
                 infor0.setText("湿垃圾");
                 infor1.setText(getInfor1());
                 infor2.setText(getInfor2());
+                TTSUtility.getInstance(this).speaking(getInfor1() + '，' + getInfor2());
                 photo.setImageResource(R.drawable.wet_rubbish);break;
             case '3':
                 infor0.setText("干垃圾");
                 infor1.setText(getInfor1());
                 infor2.setText(getInfor2());
+                TTSUtility.getInstance(this).speaking(getInfor1() + '，' + getInfor2());
                 photo.setImageResource(R.drawable.dry_rubbish);break;
+            case '4':
+                infor0.setText("小提示");
+                infor1.setText(getInfor1());
+                infor2.setText(getInfor2());
+                TTSUtility.getInstance(this).speaking(getInfor1() + '，' + getInfor2());
+                photo.setImageResource(R.drawable.help_rubbish);break;
+            case '5':
+                infor0.setText("小提示");
+                infor1.setText("系统无法判断");
+                infor2.setText("可能像素太好，内存溢出导致无法判别");
+                TTSUtility.getInstance(this).speaking("说声抱歉，无法识别");
+                photo.setImageResource(R.drawable.mistake);break;
+
         }
     }
     public void manageViewID(){

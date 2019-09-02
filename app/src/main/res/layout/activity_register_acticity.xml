@@ -79,11 +79,11 @@
             android:layout_marginTop="20dp"
             android:drawableLeft="@mipmap/dtmpassword"
             android:hint="@string/DtPassword"
-            android:paddingLeft="10dp"
+            android:paddingLeft="8dp"
             android:paddingRight="10dp"
             android:textColor="#000"
             android:textSize="16sp"
-            android:drawablePadding="10dp"
+            android:drawablePadding="8dp"
             android:maxLines="1"
             android:layout_below="@id/et_6"
             android:inputType="textPassword"/>
